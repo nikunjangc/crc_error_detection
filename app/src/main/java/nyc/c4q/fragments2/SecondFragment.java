@@ -19,7 +19,7 @@ import android.widget.TextView;
 public class SecondFragment extends Fragment {
     View rootView;
     TextView textView1;
-    EditText crc_edittext;
+    EditText message_edittext;
     TextView txt_view_message;
     Button btn_check;
     String code="";
@@ -31,10 +31,11 @@ public class SecondFragment extends Fragment {
         // Required empty public constructor
     }
 
+
     public String errorchecker(String information, String polynomial){
-     /*
-    Checking the Error in data transmission
-     */
+ /*
+Checking the Error in data transmission
+ */
 
         int dividend[]= new int[information.length() + polynomial.length()-1];
         int divisor[] = new int[polynomial.length()];
@@ -43,13 +44,13 @@ public class SecondFragment extends Fragment {
         for(int i=0;i<polynomial.length();i++)
             divisor[i] = Integer.parseInt(polynomial.charAt(i)+"");
 
-    /*
-    Calculate Remainder to check whether there is error in data transmission or not
-    our Computed entered CRC code word will be dividend and CRC polynomial of existing data transmission process will be the divisor
-    Check the Remainder
-    if there is no remainder, ie 0000 No Error in Data Transmission
-    if there is remainder, ie 1111,~ any remainder, there is error in data Transmission
-     */
+/*
+Calculate Remainder to check whether there is error in data transmission or not
+our Computed entered CRC code word will be dividend and CRC polynomial of existing data transmission process will be the divisor
+Check the Remainder
+if there is no remainder, ie 0000 No Error in Data Transmission
+if there is remainder, ie 1111,~ any remainder, there is error in data Transmission
+ */
         for(int i=0;i<information.length();i++){
             if(dividend[i]==1)
                 for(int j=0;j<divisor.length;j++)
@@ -88,6 +89,7 @@ public class SecondFragment extends Fragment {
 
 
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -97,13 +99,14 @@ public class SecondFragment extends Fragment {
 
         rootView= inflater.inflate(R.layout.fragment_second, container, false);
         textView1=(TextView) rootView.findViewById(R.id.fragment2_textview);
-        crc_edittext=(EditText) rootView.findViewById(R.id.crc_edittext);
+        message_edittext=(EditText) rootView.findViewById(R.id.message_edittext);
         txt_view_message=(TextView) rootView.findViewById(R.id.final_message_txtview);
         btn_check=(Button) rootView.findViewById(R.id.btn_check);
         Bundle bundle= getArguments();
-        String textString=bundle.getString("text01");
-        textView1.setText(textString);
 
+        String textString=bundle.getString("text01");
+         final String textpono=bundle.getString("text02");
+        textView1.setText(textString);
 
 
         btn_check.setOnClickListener(new View.OnClickListener() {
@@ -111,9 +114,9 @@ public class SecondFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                String encryptedmessage = textView1.getText().toString();
-                String polynomial = crc_edittext.getText().toString();
-                String checked = errorchecker(encryptedmessage, polynomial);
+                String encryptedmessage = message_edittext.getText().toString();
+
+                String checked = errorchecker(encryptedmessage, textpono);
                 if (checked == "yes") {
                     txt_view_message.setText("No Error in Data Transmission ");
 
@@ -127,6 +130,11 @@ public class SecondFragment extends Fragment {
             }
 
         });
+
+
+
+
+
 
 
 
