@@ -99,6 +99,7 @@ public class NewFragment extends Fragment {
 
                 transfercode.setText(a);
 
+
                 SecondFragment secondFragment= new SecondFragment();
                 FragmentManager fragmentManager= getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction= fragmentManager.beginTransaction();
@@ -106,6 +107,7 @@ public class NewFragment extends Fragment {
 
                 Bundle bundle=new Bundle();
                 bundle.putString("text01",transfercode.getText().toString());
+                bundle.putString("text02",crc_edittext.getText().toString());
                 secondFragment.setArguments(bundle);
                 fragmentTransaction.replace(R.id.frag_container_framelayout,secondFragment);
                 fragmentTransaction.addToBackStack("new_fragment");

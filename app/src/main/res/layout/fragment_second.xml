@@ -25,9 +25,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="30sp"
-        android:text="Enter CRC polynomial" />
+        android:text="Enter your CRC Code word @ Receiver: " />
     <EditText
-        android:id="@+id/crc_edittext"
+        android:id="@+id/message_edittext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="30sp"/>
