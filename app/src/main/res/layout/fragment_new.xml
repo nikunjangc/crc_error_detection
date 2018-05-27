@@ -1,0 +1,49 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context="nyc.c4q.fragments2.NewFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:id="@+id/fragment_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:text="Enter Information Key word" />
+    <EditText
+        android:id="@+id/fragment_edittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="101010"
+        android:textSize="40sp"/>
+    <TextView
+        android:id="@+id/fragment_textview1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:text="Enter CRC polynomial" />
+    <EditText
+        android:id="@+id/crc_edittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="101010"
+        android:textSize="30sp"/>
+
+    <TextView
+        android:id="@+id/transfer_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        />
+
+    <Button
+        android:id="@+id/fragment_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="40sp"
+        android:text="@string/next"/>
+
+</LinearLayout>

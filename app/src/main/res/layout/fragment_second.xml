@@ -1,0 +1,50 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="nyc.c4q.fragments2.SecondFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:text="computed crc keyword is " />
+    <TextView
+        android:id="@+id/fragment2_textview"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:textSize="50sp"
+        />
+
+
+    <TextView
+        android:id="@+id/fragment_textview1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:text="Enter CRC polynomial" />
+    <EditText
+        android:id="@+id/crc_edittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"/>
+
+    <TextView
+        android:id="@+id/final_message_txtview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+         />
+    <Button
+        android:id="@+id/btn_check"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="40sp"
+        android:text="Check"/>
+
+
+
+</LinearLayout>

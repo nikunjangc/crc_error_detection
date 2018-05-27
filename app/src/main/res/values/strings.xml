@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">fragments2</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">pass your message</string>
+    <string name="hello_second_fragment">your message was</string>
+    <string name="next">NEXT</string>
+</resources>
